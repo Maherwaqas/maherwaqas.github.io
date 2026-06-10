@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <!-- Radial gradient: lighter teal centre → dark forest edge -->
+    <radialGradient id="bg" cx="38%" cy="34%" r="68%">
+      <stop offset="0%"   stop-color="#1D9E75"/>
+      <stop offset="100%" stop-color="#063D2E"/>
+    </radialGradient>
+
+    <!-- Hex grid pattern — evokes graphene / carbon fibre crystal structure -->
+    <!-- Pointy-top regular hexagon, circumradius 6, in a 12.12 × 21 tile -->
+    <pattern id="hex" x="0" y="0" width="12.12" height="21" patternUnits="userSpaceOnUse">
+      <!-- Row 1 hex centred at (6.06, 7) -->
+      <polygon points="6.06,0 12.12,3.5 12.12,10.5 6.06,14 0,10.5 0,3.5"
+               fill="none" stroke="white" stroke-width="0.45" opacity="0.11"/>
+      <!-- Row 2 hex centred at (6.06, 17.5) — creates correct staggered tiling -->
+      <polygon points="6.06,14 12.12,17.5 12.12,24.5 6.06,28 0,24.5 0,17.5"
+               fill="none" stroke="white" stroke-width="0.45" opacity="0.11"/>
+    </pattern>
+
+    <!-- Clip to circle -->
+    <clipPath id="clip">
+      <circle cx="50" cy="50" r="47"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── Background ───────────────────────────────── -->
+  <circle cx="50" cy="50" r="50" fill="url(#bg)"/>
+
+  <!-- Hex / crystal texture clipped to circle -->
+  <rect width="100" height="100" fill="url(#hex)" clip-path="url(#clip)"/>
+
+  <!-- Subtle inner ring -->
+  <circle cx="50" cy="50" r="47" stroke="rgba(255,255,255,0.13)" stroke-width="1.2"/>
+
+  <!-- ── Electrospun fibre stack (bottom) ─────────── -->
+  <!-- Three horizontal lines = cross-section of a laminated composite -->
+  <line x1="24" y1="80" x2="76" y2="80" stroke="rgba(255,255,255,0.20)" stroke-width="1.0" stroke-linecap="round"/>
+  <line x1="30" y1="84" x2="70" y2="84" stroke="rgba(255,255,255,0.13)" stroke-width="0.7" stroke-linecap="round"/>
+  <line x1="37" y1="87.5" x2="63" y2="87.5" stroke="rgba(255,255,255,0.07)" stroke-width="0.5" stroke-linecap="round"/>
+
+  <!-- ── "DR." monospace label ────────────────────── -->
+  <text x="50" y="31"
+        text-anchor="middle"
+        font-family="'DM Mono', 'Courier New', monospace"
+        font-size="8"
+        font-weight="400"
+        fill="rgba(255,255,255,0.72)"
+        letter-spacing="4">DR.</text>
+
+  <!-- ── "W" as a crystal-lattice structure ────────── -->
+  <!-- Bond lines (think: atomic bonds in a crystal) -->
+  <path d="M17 30 L28 71 L50 46 L72 71 L83 30"
+        stroke="white"
+        stroke-width="5.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Atom nodes at the W vertices -->
+  <!-- Top nodes (larger) -->
+  <circle cx="17" cy="30" r="3.8" fill="white"/>
+  <circle cx="50" cy="46" r="3.8" fill="white"/>
+  <circle cx="83" cy="30" r="3.8" fill="white"/>
+  <!-- Bottom nodes (accent teal — lighter, like a different atom species) -->
+  <circle cx="28" cy="71" r="3.2" fill="#9FE1CB"/>
+  <circle cx="72" cy="71" r="3.2" fill="#9FE1CB"/>
+</svg>
